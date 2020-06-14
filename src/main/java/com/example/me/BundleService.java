@@ -18,7 +18,6 @@ public class BundleService {
 	WritePolicy wpolicy = new WritePolicy();
 	Policy policy = new Policy();
 	private AerospikeClient client = new AerospikeClient(cpolicy, "172.28.128.3", 3000);
-
 	private List<Bundle> list = new ArrayList<Bundle>();
 
 	@PostConstruct

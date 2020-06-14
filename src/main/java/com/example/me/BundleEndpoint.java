@@ -20,7 +20,7 @@ public class BundleEndpoint {
 		response.setBundle(bundleService.getBundle(request.getId()));
 		return response;
 	}
-	
+
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "addBundleRequest")
 	@ResponsePayload
 	public AddBundleResponse addBundle(@RequestPayload AddBundleRequest request) {
