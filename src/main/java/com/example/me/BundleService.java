@@ -58,4 +58,18 @@ public class BundleService {
 			return "Bundle with id: "+id+" error in adding to database";
 		}
 	}
+
+	public String deleteBundle(int id) {
+		try {
+			wpolicy.setTimeout(50);
+			Key key = new Key("test", "mebundles", "k" + id);
+			if (!client.exists(policy, key)) {
+				return "Bundle with id: "+id+" doesn't exists";
+			}
+			client.delete(wpolicy, key);
+			return "Bundle with id: "+id+" deleted successfully";
+		} catch (AerospikeException e) {
+			return "Bundle with id: "+id+" error in deleting from the database";
+		}
+	}
 }

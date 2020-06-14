@@ -28,4 +28,12 @@ public class BundleEndpoint {
 		response.setMessage(bundleService.addBundle(request.getId(), request.getName(), request.getPrice()));
 		return response;
 	}
+
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "deleteBundleRequest")
+	@ResponsePayload
+	public DeleteBundleResponse deleteBundle(@RequestPayload DeleteBundleRequest request) {
+		DeleteBundleResponse response = new DeleteBundleResponse();
+		response.setMessage(bundleService.deleteBundle(request.getId()));
+		return response;
+	}
 }
