@@ -1,5 +1,7 @@
-package com.example.me;
+package com.example.me.endpoint;
 
+import com.example.me.*;
+import com.example.me.service.BundleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
