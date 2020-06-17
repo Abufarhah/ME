@@ -59,5 +59,4 @@ public class BundleDao {
             return "Bundle with id: "+id+" error in deleting from the database";
         }
     }
-
 }
