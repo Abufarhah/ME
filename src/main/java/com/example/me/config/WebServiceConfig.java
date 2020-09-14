@@ -1,4 +1,4 @@
-package com.example.me.service;
+package com.example.me.config;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -19,11 +19,11 @@ import static com.example.me.constants.Constants.*;
 public class WebServiceConfig extends WsConfigurerAdapter {
 
     @Bean
-    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext context) {
+    public ServletRegistrationBean messageDispatcherServlet(ApplicationContext context) {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(context);
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<MessageDispatcherServlet>(servlet, SOAP_URL_MAPPING);
+        return new ServletRegistrationBean(servlet, SOAP_URL_MAPPING);
     }
 
     @Bean
